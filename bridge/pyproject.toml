@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-adverserial-hardware-bridge"
+version = "2.0.0"
+description = "Native executable bridge from Adverserial verifier subprocesses to Node.js"
+requires-python = ">=3.10"
+dependencies = ["ruamel.yaml==0.18.16"]
+
+[project.scripts]
+hermes-adverserial-attestation = "hermes_adverserial_bridge.attestation:main"
+hermes-adverserial-hardware-verify = "hermes_adverserial_bridge:main"
+
+[tool.setuptools.packages.find]
+include = ["hermes_adverserial_bridge*"]
